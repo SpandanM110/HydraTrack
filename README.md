@@ -47,7 +47,7 @@ https://expo.dev/accounts/spandanm110/projects/hydratrack/builds/56011da3-420b-4
 | Framework     | React Native (Expo)         |
 | Backend       | Supabase (Auth + DB)        |
 | Weather API   | OpenWeatherMap API          |
-| AI Engine     | Google Gemini 1.5 Pro/Flash |
+| AI Engine     | Google Gemini 1.5b Flash |
 | Notifications | Expo Notifications          |
 | Location      | Expo Location API           |
 
