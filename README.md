@@ -10,6 +10,9 @@ HydraTrack is a smart AI-powered water intake app that creates personalized hydr
 
 Test the app directly on your Android device:
 
+
+https://expo.dev/accounts/spandanm110/projects/hydratrack/builds/56011da3-420b-443c-ae4f-9df49bc54387
+
 ### 🔗 [Download APK](https://expo.dev/accounts/spandanm110/projects/hydratrack/builds/56011da3-420b-443c-ae4f-9df49bc54387)
 
 > *(The APK is available under the **Releases** section of this repository.)*
@@ -20,12 +23,6 @@ Test the app directly on your Android device:
 2. Enable **"Install from unknown sources"** in your phone settings.
 3. Tap the APK to install HydraTrack.
 4. Open the app and start your hydration journey!
-
----
-
-##  One-Line Description
-
-**HydraTrack is a personalized water intake app that uses AI and weather data to create smart hydration plans and reminders.**
 
 ---
 
