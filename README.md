@@ -85,7 +85,6 @@ OPENWEATHER_API_KEY=your_openweather_key
 GEMINI_API_KEY=your_gemini_key
 ```
 
-> ⚠️ Never expose your private keys publicly.
 
 ### 4. Start the app
 
