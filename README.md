@@ -55,14 +55,12 @@ Test the app directly on your Android device:
 | Location      | Expo Location API           |
 
 ---
+##  App Screenshots
 
-## 🖼 App Screenshots
+| Login | Dashboard | Hydration Tip | Progress | Profile |
+|:-----:|:---------:|:-------------:|:--------:|:-------:|
+| ![Login](https://github.com/user-attachments/assets/1fa981e9-2aa0-4701-9d11-c74f110abd65) | ![Dashboard](https://github.com/user-attachments/assets/187e2b5e-9b49-4302-ab79-203b320aeda8) | ![Tip](https://github.com/user-attachments/assets/c89356b3-5638-4cb2-bc07-b95e2301cdd3) | ![Progress](https://github.com/user-attachments/assets/20bffc00-a8fc-4980-b8a6-354ebe614f9d) | ![Profile](https://github.com/user-attachments/assets/69f05c52-4128-4c99-90b5-6379dd6e9e5a) |
 
-| Login                        | Dashboard                       | Hydration Tip            | Progress                           |
-| ---------------------------- | ------------------------------- | ------------------------ | ---------------------------------- |
-| ![Login](./assets/login.jpg) | ![Dashboard](./assets/home.jpg) | ![Tip](./assets/tip.jpg) | ![Progress](./assets/progress.jpg) |
-
----
 
 ## Getting Started (Developer Setup)
 
