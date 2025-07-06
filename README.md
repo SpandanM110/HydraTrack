@@ -4,9 +4,94 @@
 **Your personal hydration assistant.**
 HydraTrack is a smart AI-powered water intake app that creates personalized hydration plans based on your age, weight, health conditions, and local weather. Stay healthy and hydrated with tailored schedules, reminders, and progress tracking.
 
+## Schema
 
+```
+-- Enable the UUID extension
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
-## 📲 Download the App
+-- Create the profiles table
+CREATE TABLE profiles (
+  user_id UUID PRIMARY KEY REFERENCES auth.users(id),
+  age INT,
+  weight FLOAT,
+  gender TEXT,
+  activity_level TEXT,
+  health_conditions TEXT
+);
+
+-- Create the hydration_plans table
+CREATE TABLE hydration_plans (
+  user_id UUID REFERENCES profiles(user_id),
+  date DATE,
+  total_intake_ml INT,
+  schedule JSONB,
+  suggestions TEXT,
+  created_at TIMESTAMP DEFAULT now(),
+  PRIMARY KEY (user_id, date)
+);
+
+-- Create the water_logs table
+CREATE TABLE water_logs (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES profiles(user_id),
+  amount INT,
+  timestamp TIMESTAMPTZ DEFAULT now()
+);
+
+-- Create RLS (Row Level Security) policies
+-- This ensures users can only access their own data
+
+-- Enable RLS on all tables
+ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE hydration_plans ENABLE ROW LEVEL SECURITY;
+ALTER TABLE water_logs ENABLE ROW LEVEL SECURITY;
+
+-- Create policies for profiles table
+CREATE POLICY "Users can view their own profile"
+  ON profiles FOR SELECT
+  USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can insert their own profile"
+  ON profiles FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update their own profile"
+  ON profiles FOR UPDATE
+  USING (auth.uid() = user_id);
+
+-- Create policies for hydration_plans table
+CREATE POLICY "Users can view their own hydration plans"
+  ON hydration_plans FOR SELECT
+  USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can insert their own hydration plans"
+  ON hydration_plans FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update their own hydration plans"
+  ON hydration_plans FOR UPDATE
+  USING (auth.uid() = user_id);
+
+-- Create policies for water_logs table
+CREATE POLICY "Users can view their own water logs"
+  ON water_logs FOR SELECT
+  USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can insert their own water logs"
+  ON water_logs FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update their own water logs"
+  ON water_logs FOR UPDATE
+  USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can delete their own water logs"
+  ON water_logs FOR DELETE
+  USING (auth.uid() = user_id);
+```
+
+##  Download the App
 
 Test the app directly on your Android device:
 
